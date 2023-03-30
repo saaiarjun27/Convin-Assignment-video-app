@@ -6,8 +6,8 @@ React-player: npm i react-player (for video playing)
 React router: npm i react-router (for routing)
 uuidv4: npm i uuidv4 (for unique id(s))
 
-Backend is built using a json-server deployed in Glitch https://sudden-purple-verse.glitch.me/
-The React app is deployed in Netlify https://legendary-souffle-6f1526.netlify.app/
+Backend is built using a json-server deployed in Glitch https://sudden-purple-verse.glitch.me/.
+The React app is deployed in Netlify https://legendary-souffle-6f1526.netlify.app/.
 
 https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(10).png
 
