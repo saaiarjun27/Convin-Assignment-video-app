@@ -36,12 +36,12 @@ class AddBucket extends React.Component {
             <input
               type="text"
               name="videos"
-              placeholder="Example: https://www.youtube.com/watch?v=oUFJJNQGwhk, https://www.youtube.com/watch?v=jNgP6d9HraI,......"
+              placeholder="Enter the video links separated by commas"
               value={this.state.videos}
               onChange={(e) => this.setState({ videos: e.target.value })}
             />
           </div>
-          <button className="ui button blue">Add</button>
+          <button disabled={!this.state.name || !this.state.videos} className="ui button blue">Add</button>
         </form>
       </div>
     );
