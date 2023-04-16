@@ -13,6 +13,34 @@ import HistoryList from "./HistoryList";
 function App() {
   const LOCAL_STORAGE_KEY = "buckets";
   const [buckets, setbuckets] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [hist, setHist] = useState([]);
+  const [searchhistoryTerm, setSearchhistoryTerm] = useState("");
+  const [searchhistroyResults, setSearchhistoryResults] = useState([]);
+
+    const retrieveHistory = async () => {
+        const response = await api.get("/historyStorage");
+        return response.data;
+      };
+    
+    const removehistoryHandler = async (id) => {
+      await api.delete(`/historyStorage/${id}`);
+      const newHistoryList = hist.filter((history) => {
+        return history.id !== id;
+      });
+  
+      setHist(newHistoryList);
+    };
+
+      useEffect(() => {
+        const getAllHistory = async () => {
+          const allHistory = await retrieveHistory();
+          if (allHistory) setHist(allHistory);
+        };
+    
+        getAllHistory();
+      }, []);
 
   //Retrievebuckets
   const retrievebuckets = async () => {
@@ -49,6 +77,36 @@ function App() {
     setbuckets(newBucketList);
   };
 
+  const searchHandler = (searchTerm) => {
+    setSearchTerm(searchTerm);
+    if (searchTerm !== "") {
+      const newbucketList = buckets.filter((bucket) => {
+        return Object.values(bucket)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase());
+      });
+      setSearchResults(newbucketList);
+    } else {
+      setSearchResults(buckets);
+    }
+  };
+
+  const searchhistoryHandler = (searchhistoryTerm) => {
+    setSearchhistoryTerm(searchhistoryTerm);
+    if (searchhistoryTerm !== "") {
+      const newHistoryList = hist.filter((history) => {
+        return Object.values(history)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchhistoryTerm.toLowerCase());
+      });
+      setSearchhistoryResults(newHistoryList);
+    } else {
+      setSearchhistoryResults(hist);
+    }
+  };
+
   useEffect(() => {
     // const retrivebuckets = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     // if (retrivebuckets) setbuckets(retrivebuckets);
@@ -75,8 +133,10 @@ function App() {
             render={(props) => (
               <BucketList
                 {...props}
-                buckets={buckets}
+                buckets={searchTerm.length < 1 ? buckets : searchResults}
                 getbucketId={removebucketHandler}
+                term={searchTerm}
+                searchKeyword={searchHandler}
               />
             )}
           />
@@ -98,7 +158,18 @@ function App() {
           />
 
           <Route path="/watchlist/:id" component={BucketDetail} />
-          <Route path="/history" component={HistoryList} />
+          <Route 
+          path="/history" 
+          render={(props) => (
+              <HistoryList
+                {...props}
+                hist = {searchhistoryTerm.length < 1 ? hist : searchhistroyResults}
+                gethistoryId={removehistoryHandler}
+                term={searchhistoryTerm}
+                searchhistoryKeyword={searchhistoryHandler}
+              />
+            )} 
+          />
 
         </Switch>
       </Router>

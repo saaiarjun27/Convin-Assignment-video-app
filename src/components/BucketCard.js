@@ -22,8 +22,8 @@ const BucketCard = (props) => {
         <Link
           to={{ pathname: `/watchlist/${id}`, state: { bucket: props.bucket } }}
         >
-          <div className="header">{name}</div>
-          <div>{videos}</div>
+          <div className="header"  style={{padding:"7px"}}>{name}</div>
+        
         </Link>
       </div>
       <i

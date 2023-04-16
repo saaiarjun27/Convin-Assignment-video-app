@@ -1,34 +1,70 @@
-Dependencies:
-React test library: npm i @testing-library/react (for testing)
-React test library user-event: npm i @testing-library/user-event (for testing)
-Axios: npm i axios (Promise based HTTP client for the browser and node.js)
-React-player: npm i react-player (for video playing)
-React router: npm i react-router (for routing)
-uuidv4: npm i uuidv4 (for unique id(s))
+# Getting Started with Create React App
 
-Backend is built using a json-server deployed in Glitch https://sudden-purple-verse.glitch.me/.
-The React app is deployed in Netlify https://legendary-souffle-6f1526.netlify.app/.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(10).png
+## Available Scripts
 
-The above image shows the home page which contains the buckets with add, edit and delete feature. The home page also consists of the history button.
+In the project directory, you can run:
 
-https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(13).png
+### `npm start`
 
-The video when clicked shows up this route where the video player contains of multiple videos in the form a playlist. The button show in the above image is the source for the playlist.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(12).png
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-The playlist shows the list of cards.
+### `npm test`
 
-https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(14).png
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-The above image shows the add functiionality of the bucket with the name for the bucket and we can provide multiple links on the links field separated by commas.
+### `npm run build`
 
-https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(15).png
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The above image shows the history tab where the history of the bucket is stored with the time at which the bucket was opened.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-https://raw.githubusercontent.com/saaiarjun27/Convin-Assignment-video-app/1147092aec5f03fa25288f861f3e662930a7d4e8/Screenshot%20(16).png.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-The above image shows the edit functionality.
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
